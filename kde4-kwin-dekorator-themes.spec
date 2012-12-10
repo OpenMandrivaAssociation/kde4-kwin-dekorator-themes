@@ -1,7 +1,7 @@
 Name:		kde4-kwin-dekorator-themes
 Summary:	Themes for deKorator for KDE 4
 Version:	0.2
-Release:	%mkrel 1
+Release:	2
 Group:		Graphical desktop/KDE
 License:	GPL
 URL:		http://www.kde-look.org/index.php?xcontentmode=21
@@ -42,60 +42,70 @@ Get more themes at kde-look.org if you want.
 %build
 
 %install
-%__rm -rf %{buildroot}
-
-%__mkdir_p %{buildroot}%{_kde_appsdir}/deKorator/themes
-%__cp -R S_Dark-0.1-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
-%__cp -R Plastic-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
-%__cp -R Area-51 %{buildroot}%{_kde_appsdir}/deKorator/themes/Area-51-theme
-%__cp -R Area-51-Lte %{buildroot}%{_kde_appsdir}/deKorator/themes/Area-51-Lte-theme
-%__cp -R Aero_Glass-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
-%__cp -R kore-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
-%__cp -R Golden\ Wood/golden-wood-thin %{buildroot}%{_kde_appsdir}/deKorator/themes/golden-wood-thin-theme
-%__cp -R Golden\ Wood/golden-wood\ original %{buildroot}%{_kde_appsdir}/deKorator/themes/golden-wood-original-theme
-%__cp -R vista-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
-%__cp -R beo-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
-%__cp -R Vectorcell2b-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
-%__cp -R winclassic-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
-
+mkdir -p %{buildroot}%{_kde_appsdir}/deKorator/themes
+cp -R S_Dark-0.1-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
+cp -R Plastic-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
+cp -R Area-51 %{buildroot}%{_kde_appsdir}/deKorator/themes/Area-51-theme
+cp -R Area-51-Lte %{buildroot}%{_kde_appsdir}/deKorator/themes/Area-51-Lte-theme
+cp -R Aero_Glass-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
+cp -R kore-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
+cp -R Golden\ Wood/golden-wood-thin %{buildroot}%{_kde_appsdir}/deKorator/themes/golden-wood-thin-theme
+cp -R Golden\ Wood/golden-wood\ original %{buildroot}%{_kde_appsdir}/deKorator/themes/golden-wood-original-theme
+cp -R vista-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
+cp -R beo-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
+cp -R Vectorcell2b-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
+cp -R winclassic-theme %{buildroot}%{_kde_appsdir}/deKorator/themes/
 
 cd %{buildroot}%{_kde_appsdir}/deKorator/themes/Area-51-theme
-%__mv Buttons buttons
-%__mv Deco deco
-%__mv Masks masks
+mv Buttons buttons
+mv Deco deco
+mv Masks masks
 cd buttons
-%__mkdir_p hover normal press
-%__cp buttonClose.png buttonMax.png buttonMin.png normal
-%__cp buttonClose.png hover/buttonCloseHover.png
-%__cp buttonMax.png hover/buttonMaxHover.png
-%__cp buttonMin.png hover/buttonMinHover.png
-%__mv buttonClose.png press/buttonClosePress.png
-%__mv buttonMax.png press/buttonMaxPress.png
-%__mv buttonMin.png press/buttonMinPress.png
+mkdir -p hover normal press
+cp buttonClose.png buttonMax.png buttonMin.png normal
+cp buttonClose.png hover/buttonCloseHover.png
+cp buttonMax.png hover/buttonMaxHover.png
+cp buttonMin.png hover/buttonMinHover.png
+mv buttonClose.png press/buttonClosePress.png
+mv buttonMax.png press/buttonMaxPress.png
+mv buttonMin.png press/buttonMinPress.png
 
 cd %{buildroot}%{_kde_appsdir}/deKorator/themes/Area-51-Lte-theme
-%__mv Buttons buttons
-%__mv Deco deco
-%__mv Masks masks
+mv Buttons buttons
+mv Deco deco
+mv Masks masks
 cd buttons
-%__mkdir_p hover normal press
-%__cp buttonClose.png buttonMax.png buttonMin.png normal
-%__cp buttonClose.png hover/buttonCloseHover.png
-%__cp buttonMax.png hover/buttonMaxHover.png
-%__cp buttonMin.png hover/buttonMinHover.png
-%__mv buttonClose.png press/buttonClosePress.png
-%__mv buttonMax.png press/buttonMaxPress.png
-%__mv buttonMin.png press/buttonMinPress.png
+mkdir -p hover normal press
+cp buttonClose.png buttonMax.png buttonMin.png normal
+cp buttonClose.png hover/buttonCloseHover.png
+cp buttonMax.png hover/buttonMaxHover.png
+cp buttonMin.png hover/buttonMinHover.png
+mv buttonClose.png press/buttonClosePress.png
+mv buttonMax.png press/buttonMaxPress.png
+mv buttonMin.png press/buttonMinPress.png
 
 cd %{buildroot}%{_kde_appsdir}/deKorator/themes
-%__chmod 755 Aero_Glass-theme
+chmod 755 Aero_Glass-theme
 cd Aero_Glass-theme
-%__chmod -R 755 *
-
-%clean
-%__rm -rf %{buildroot}
+chmod -R 755 *
 
 %files
 %defattr(644,root,root,755)
 %{_kde_appsdir}/deKorator/themes/*
+
+%changelog
+* Tue Feb 28 2012 Andrey Bondrov <abondrov@mandriva.org> 0.2-1mdv2011.0
++ Revision: 781299
+- imported package kde4-kwin-dekorator-themes
+
+
+* Tue Feb 28 2012 Andrey Bondrov <bondrov@math.dvgu.ru> 0.2-1mdv2010.2
+- Add Win Classic 1.0 and Vectorcell2 0.1 themes
+
+* Sun Jul 11 2010 Andrey Bondrov <bondrov@math.dvgu.ru> 0.1-69.2mib2010.1
+- Add kde4-macros to BuildRequires
+
+* Wed May 13 2009 Andrey Bondrov <bondrov@math.dvgu.ru> 0.1-69.1mib2009.1
+- First release for MIB users
+- MIB (Mandriva Italia Backport) - http://mib.pianetalinux.org/
 
