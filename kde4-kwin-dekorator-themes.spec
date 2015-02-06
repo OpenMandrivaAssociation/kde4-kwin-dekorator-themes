@@ -1,7 +1,7 @@
 Name:		kde4-kwin-dekorator-themes
 Summary:	Themes for deKorator for KDE4
 Version:	0.3
-Release:	3
+Release:	4
 Group:		Graphical desktop/KDE
 License:	GPL
 Url:		http://www.kde-look.org/index.php?xcontentmode=21
