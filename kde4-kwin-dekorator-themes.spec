@@ -4,7 +4,7 @@ Version:	0.3
 Release:	4
 Group:		Graphical desktop/KDE
 License:	GPL
-Url:		http://www.kde-look.org/index.php?xcontentmode=21
+Url:		https://www.kde-look.org/index.php?xcontentmode=21
 # 23.04.2013
 Source0:	all-themes-dekorator.tar.gz
 BuildRequires:	kde4-macros
